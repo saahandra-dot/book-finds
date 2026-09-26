@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "book-finds",
+    "name": "Book Finds",
     "slug": "book-finds",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "bookfinds",
@@ -24,7 +24,9 @@
     },
     "plugins": [
       "expo-router",
-      "expo-status-bar"
+      "expo-status-bar",
+      "expo-sqlite",
+      "expo-asset"
     ]
   }
 }

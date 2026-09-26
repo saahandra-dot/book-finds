@@ -1,8 +1,12 @@
 import { Tabs } from 'expo-router';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
+import { useShelvesAvailability } from '../../src/hooks/useShelvesAvailability';
 import { colors } from '../../src/theme/colors';
 
 export default function TabLayout() {
+    const shelvesAvailable = useShelvesAvailability();
+
     return (
         <Tabs
             screenOptions={{
@@ -19,6 +23,14 @@ export default function TabLayout() {
                 options={{
                     title: 'Discover',
                     tabBarLabel: 'Discover',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons
+                            name={focused ? 'search' : 'search-outline'}
+                            size={size}
+                            color={color}
+                        />
+                    ),
+
                 }}
             />
 
@@ -27,6 +39,22 @@ export default function TabLayout() {
                 options={{
                     title: 'My Catalog',
                     tabBarLabel: 'My Catalog',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons
+                            name={focused ? 'library' : 'library-outline'}
+                            size={size}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="shelves"
+                options={{
+                    title: 'Shelves',
+                    tabBarLabel: 'Shelves',
+                    href: shelvesAvailable === true ? '/shelves' : null,
                 }}
             />
         </Tabs>

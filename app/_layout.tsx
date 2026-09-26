@@ -23,12 +23,18 @@ export default function RootLayout() {
 
                 <Stack.Screen
                     name="book-details"
-                    options={{ title: 'Book Details' }}
+                    options={{
+                        title: 'Book Details',
+                        headerBackButtonDisplayMode: 'minimal',
+                    }}
                 />
 
                 <Stack.Screen
                     name="save-edit"
-                    options={{ title: 'Save / Edit' }}
+                    options={{
+                        title: 'Save / Edit',
+                        headerBackButtonDisplayMode: 'minimal',
+                    }}
                 />
             </Stack>
         </>
